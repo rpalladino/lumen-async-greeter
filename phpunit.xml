@@ -18,6 +18,10 @@
             <directory suffix=".php">./app</directory>
         </whitelist>
     </filter>
+    <listeners>
+        <listener class="\Hamcrest\Adapter\PHPUnit\TestListener"/>
+        <listener class="\Mockery\Adapter\Phpunit\TestListener"/>
+    </listeners>
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="CACHE_DRIVER" value="array"/>
