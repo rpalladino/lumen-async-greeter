@@ -11,6 +11,6 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->post('/greetings/{name}', function () use ($router) {
+    return response(null, \Illuminate\Http\Response::HTTP_ACCEPTED);
 });
