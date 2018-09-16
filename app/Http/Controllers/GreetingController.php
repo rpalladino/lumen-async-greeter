@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Response;
+use App\Jobs\GreetingJob;
 
 class GreetingController extends Controller
 {
@@ -23,6 +24,8 @@ class GreetingController extends Controller
      */
     public function acceptNewGreeting() : Response
     {
+        dispatch(new GreetingJob());
+
         return response(null, Response::HTTP_ACCEPTED);
     }
 }
