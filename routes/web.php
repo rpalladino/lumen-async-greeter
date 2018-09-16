@@ -11,6 +11,4 @@
 |
 */
 
-$router->post('/greetings/{name}', function () use ($router) {
-    return response(null, \Illuminate\Http\Response::HTTP_ACCEPTED);
-});
+$router->post('/greetings/{name}', 'GreetingController@acceptNewGreeting');
