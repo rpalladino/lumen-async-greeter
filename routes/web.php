@@ -12,3 +12,4 @@
 */
 
 $router->post('/greetings/{name}', 'GreetingController@acceptNewGreeting');
+$router->get('/greetings', 'GreetingController@listGreetings');
