@@ -2,16 +2,20 @@
 
 namespace App\Jobs;
 
+use App\Greeting;
+
 class GreetingJob extends Job
 {
+    private $name;
+
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(string $name)
     {
-        //
+        $this->name = $name;
     }
 
     /**
@@ -19,8 +23,10 @@ class GreetingJob extends Job
      *
      * @return void
      */
-    public function handle()
+    public function handle() : void
     {
-        //
+        $greeting = new Greeting();
+        $greeting->name = $this->name;
+        $greeting->save();
     }
 }
