@@ -22,9 +22,9 @@ class GreetingController extends Controller
      *
      * @return Response
      */
-    public function acceptNewGreeting() : Response
+    public function acceptNewGreeting(string $name) : Response
     {
-        dispatch(new GreetingJob());
+        dispatch(new GreetingJob($name));
 
         return response(null, Response::HTTP_ACCEPTED);
     }
