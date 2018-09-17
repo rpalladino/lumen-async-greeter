@@ -1,10 +1,12 @@
 <?php
 
 use App\Jobs\GreetingJob;
+use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
 class GreetingJobTest extends TestCase
 {
+    use DatabaseMigrations;
     use DatabaseTransactions;
 
     /**
